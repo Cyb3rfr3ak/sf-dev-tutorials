@@ -1017,8 +1017,37 @@ body .markdown-body
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="sf-dev-tutorials"><a name="user-content-sf-dev-tutorials" href="#sf-dev-tutorials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sf-dev-tutorials</h1>
 <p>Repository containing a collection of useful tutorials that were requested in Org62</p>
 <ul>
+<li><a href="#automatic-local-iphone-backup">Automatic local iPhone backup</a></li>
 <li><a href="#chrome-notifications">Chrome Notifications</a></li>
 </ul>
+<hr />
+<h3 id="automatic-local-iphone-backup"><a name="user-content-automatic-local-iphone-backup" href="#automatic-local-iphone-backup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatic local iPhone backup</h3>
+<p>If your iPhone does not have the possibility to make backups to iCloud automatically (for example because your company doesn&rsquo;t trust Apples iCloud), you can still do incremental full-backups via iTunes. However we want to go further and make these backups happen automatically when the iPhone is connected to the Mac.</p>
+<ol>
+<li>Connect the iPhone via USB to the Mac</li>
+<li>Open iTunes and setup the initial settings for a local backup<br />
+<strong>Encrypted backups are strongly recommended, <a href="https://support.apple.com/en-us/HT205220">as only these will contain ALL data</a> </strong></li>
+<li>Download the <a href="/Users/tle/development/sf-dev-tutorials/scripts/triggeriphonebackup.applescript">script file</a></li>
+<li>Open the script in the standard &ldquo;Script Editor.app&rdquo; and export it as an application (e.g. triggeriphonebackup.app)</li>
+<li>Choose one of the following methods to grant the script the needed permissions to click on UI elements<ul>
+<li>Open macOS System Preferences -&gt; Security &amp; Privacy -&gt; Privacy -&gt; Accessibility. Add the exported app file to the list and enable the checkmark.<br />
+<strong>OR</strong></li>
+<li>Run the exported app file and follow the instructions in the pop-up.</li>
+</ul>
+</li>
+<li>Download and install <a href="https://www.controlplaneapp.com/">ControlPlane</a> for some automation.</li>
+<li>Create a new Context in ControlPlane, call it &ldquo;iPhone connected&rdquo;</li>
+<li>Check if &ldquo;Attached USB Device&rdquo; is enabled under &ldquo;Evidence Sources&rdquo;</li>
+<li>Create a new &ldquo;Attached USB Device&rdquo; Rule:<ul>
+<li>Using the presence of &ldquo;iPhone&rdquo;</li>
+<li>Switch to the context &ldquo;iPhone connected&rdquo;</li>
+<li>Confidence: 100%</li>
+</ul>
+</li>
+<li>Finally, create a new action that will open &ldquo;triggeriphonebackup.app&rdquo; on arrival of the &ldquo;iPhone connected&rdquo; context.</li>
+<li>Enable the checkmark for the new action.</li>
+<li>Unplug and plug in the iPhone to test the automation.</li>
+</ol>
 <hr />
 <h4 id="chrome-notifications"><a name="user-content-chrome-notifications" href="#chrome-notifications" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chrome Notifications</h4>
 <p>If you&rsquo;re using a lot of web applications (like GMail, GCalendar, etc.) which are sending notifications, you might find it annoying that these notifications can&rsquo;t be disabled/enabled quickly, for instance when you are presenting a keynote and GMail notifications are constantly popping up. In macOS we don&rsquo;t want each application to manage its own notification system. Instead, we can force Chrome to use the native notification system of macOS, so we can control it globally.</p>
