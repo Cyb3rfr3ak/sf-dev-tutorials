@@ -20,7 +20,7 @@ If your iPhone does not have the possibility to make backups to iCloud automatic
 5. Choose one of the following methods to grant the script the needed permissions to click on UI elements
     * Open macOS System Preferences -> Security & Privacy -> Privacy -> Accessibility. Add the exported app file to the list and enable the checkmark.
 
-    **OR**
+        **OR**
 
     * Run the exported app file and follow the instructions in the pop-up.
 6. Download and install [ControlPlane](https://www.controlplaneapp.com/) for some automation.
