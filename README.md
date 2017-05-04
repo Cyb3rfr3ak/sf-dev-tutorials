@@ -13,7 +13,7 @@ If your iPhone does not have the possibility to make backups to iCloud automatic
 1. Connect the iPhone via USB to the Mac
 2. Open iTunes and setup the initial settings for a local backup
 
-  **Encrypted backups are strongly recommended, [as only these will contain ALL data](https://support.apple.com/en-us/HT205220)**
+    **Encrypted backups are strongly recommended, [as only these will contain ALL data](https://support.apple.com/en-us/HT205220)**
 
 3. Download the [script file](scripts/triggeriphonebackup.applescript)
 4. Open the script in the standard "Script Editor.app" and export it as an application (e.g. triggeriphonebackup.app)
