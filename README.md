@@ -3,6 +3,7 @@ Repository containing a collection of useful tutorials that were requested in Or
 
 * [Automatic local iPhone backup](#automatic-local-iphone-backup)
 * [Chrome Notifications](#chrome-notifications)
+* [Gmail as default handler for mailto-links](#gmail-as-default-handler-for-mailto-links)
 
 ---
 
@@ -46,5 +47,16 @@ If you're using a lot of web applications (like GMail, GCalendar, etc.) which ar
 * Restart Google Chrome
 * Customize your settings in macOS System Preferences -> Notifications -> Do Not Disturb
 ![notification-settings](images/chrome-notifications/chrome-notifications-2.png)
+
+---
+
+#### Gmail as default handler for mailto-links
+
+* Navigate to "gmail.com" and log in to your Gmail account
+* Open up the javascript console
+* Paste and execute the following command:
+```javascript
+navigator.registerProtocolHandler("mailto", "https://mail.google.com/mail/?extsrc=mailto&url=%s", "Gmail");
+```
 
 ---
